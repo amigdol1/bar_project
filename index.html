@@ -4,89 +4,58 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/styles.js"></script>
     <title></title>
   </head>
   <body>
-    <div class = "container locations">
-    <h1>SE Bar Locations</h1>
+    <div class="banner">
+      <h1>SE Bar Locations</h1>
+    </div>
+    <br></br>
+    <div class = "container" id="locations">
       <div class="row">
         <div class="col-md-4">
-          <h4>Slingshot</h4>
-          <img src="img/slingshot.jpg" alt="Picture of Slingshot Bar">
+          <a href="order_form.html" id="slingshot"><h4>Slingshot</h4>
+          <img src="img/slingshot.jpg" alt="Picture of Slingshot Bar"></a>
         </div>
         <div class="col-md-4">
-          <h4>The Gemini</h4>
-          <img src="img/gemini.jpg" alt="Picture of Gemini Bar">
+          <a href="order_form.html" id="gemini"><h4>The Gemini</h4>
+          <img src="img/gemini.jpg" alt="Picture of Gemini Bar"></a>
         </div>
         <div class="col-md-4">
-          <h4>Gold Dust Meridian</h4>
-          <img src="img/golddust.jpg" alt="Picture of the Gold Dust Meridian">
+          <a href="order_form.html" id="gold"><h4>Gold Dust Meridian</h4>
+          <img src="img/golddust.jpg" alt="Picture of the Gold Dust Meridian"></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h4>Lardo</h4>
-          <img src="img/lardo.jpg" alt="Picture of Lardo">
+          <a href="order_form.html" id="lardo"><h4>Lardo</h4>
+          <img src="img/lardo.jpg" alt="Picture of Lardo"></a>
         </div>
         <div class="col-md-4">
-          <h4>Aalto</h4>
-          <img src="img/aalto-lounge.jpg" alt="Picture of Aalto Lounge">
+          <a href="order_form.html" id="aalto"><h4>Aalto</h4>
+          <img src="img/aalto-lounge.jpg" alt="Picture of Aalto Lounge"></a>
         </div>
         <div class="col-md-4">
-          <h4>Space Room</h4>
-          <img src="img/spaceroom.jpg" alt="Picture of Space Room">
+          <a href="order_form.html" id="spaceroom"><h4>Space Room</h4>
+          <img src="img/spaceroom.jpg" alt="Picture of Space Room"></a>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4">
-          <h4>Bar of the Gods</h4>
-          <img src="img/BOG.jpg" alt="Picture of Bar of the Gods">
+          <a href="order_form.html" id="bog"><h4>Bar of the Gods</h4>
+          <img src="img/BOG.jpg" alt="Picture of Bar of the Gods"></a>
         </div>
         <div class="col-md-4">
-          <h4>Circa 33</h4>
-          <img src="img/circa33.jpg" alt="Picture of Circa 33">
+          <a href="order_form.html" id="circa33"><h4>Circa 33</h4>
+          <img src="img/circa33.jpg" alt="Picture of Circa 33"></a>
         </div>
         <div class="col-md-4">
-          <h4>Sweet Hereafter</h4>
+          <a href="order_form.html" id="sweethereafter"><h4>Sweet Hereafter</h4>
+          <img src="img/sweet-hereafter.jpg" alt="Picture of Sweet Hereafter"></a>
         </div>
       </div>
-  </div> <!-- closes container class -->
-
-    <div class="container">
-      <h1 class="text-center">Pre-Order Your Drink!</h1>
-      <div class="row">
-      <form id="order_form">
-        <div class="col-md-4 col-md-offset-4">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="age" value="1">21 and older</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="age" value="2">Under 21</label>
-        </div>
-        <div class="form-group">
-          <label for="eta">What's your ETA?</label>
-          <select class="form-control" id="eta">
-            <option>10 minutes</option>
-            <option>20 minutes</option>
-            <option>30 minutes</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="name">Type out your drink</label>
-          <input type="text" class="form-control" id="drink">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg">Place Your Order!</button>
-      </form>
-    </div>
-    </div>
-    </div>
-  </body>
-
+    </div> 
   </body>
 </html>
