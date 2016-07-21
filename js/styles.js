@@ -3,7 +3,7 @@ var name;
 
 var naming = function() {
   if (id === "gold") {
-    return "Gold Dust Meridian";
+    name = "Gold Dust Meridian";
   }
 }
 
@@ -14,7 +14,6 @@ $(document).ready(function(){
     event.preventDefault();
     window.location.href = "order_form.html";
     id = $(this).attr('id');
-    function
-    alert(id);
+    naming();
     });
   });
