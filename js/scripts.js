@@ -36,18 +36,18 @@ var naming = function() {
   }
 }
 
-
 $(document).ready(function() {
   $('a').click(function(event) {
     event.preventDefault();
     window.location.href = "order_form.html";
     id = $(this).attr('id');
     naming();
-    alert(name);
-    });
+  });
+  
+  $("#result").text("Great! We're ready to take your order at " + name + ".");
+
   $("form#order_form").submit(function(event) {
     event.preventDefault();
-
     var nameInput = $("input#name").val();
     var ageInput = parseInt($("input:radio[name=age]:checked").val());
     var timeInput = $("select#eta").val();

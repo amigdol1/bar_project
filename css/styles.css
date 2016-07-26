@@ -8,5 +8,23 @@ img {
   color: white;
   width: 100%;
   padding: 30px;
+  padding-bottom: 50px;
   text-align: center;
+}
+
+#intro {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 22px;
+}
+
+.col-md-4 p {
+  width: 90%;
+  line-height:.95;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+#carousel-btn {
+  margin: auto;
 }
