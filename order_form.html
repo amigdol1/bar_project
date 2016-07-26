@@ -9,15 +9,15 @@
   </head>
   <body>
     <div class="banner">
-      <h1>SE Bar Locations</h1>
+      <h1>SE Drink Pre-Order</h1>
     </div>
     <div class="container" id="pre_order">
-      <h1 class="text-center">Pre-Order Your Drink!</h1>
-      <p><div id="bar_result"></div></p>
       <div class="row">
-        <form id="order_form">
-          <div class="col-md-4 col-md-offset-4">
-            <h1>Pre-Order Your Drink!</h1>
+        <div class="col-md-4 col-md-offset-4">
+          <div id="bar_result">
+            <h2></h2>
+          </div>
+          <form id="order_form">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" class="form-control" id="name">
@@ -40,17 +40,17 @@
               <label for="name">Type out your drink</label>
               <input type="text" class="form-control" id="drink">
             </div>
+
             <button type="submit" class="btn btn-default btn-lg">Place Your Order!</button>
             <span class="btn btn-default btn-lg" id="add_drink">Add Another drink</span>
           </form>
 
           <div id="result">
-            <p>Name: <span class="name_result"></span></p>
-            <p>Drink: <span class="drink_result"></span></p>
-            <p>ETA: <span class="time_result"></span></p>
+            <ul></ul>
           </div>
 
         </div>
       </div>
-    </body>
+    </div>
+  </body>
 </html>

@@ -37,16 +37,13 @@ var naming = function() {
 }
 
 $(document).ready(function() {
-  $('a').click(function(event) {
-    event.preventDefault();
+  $('a').click(function() {
     window.location.href = "order_form.html";
     id = $(this).attr('id');
     naming();
   });
 
-  $("#bar_result").text("Great! We're ready to take your order at " + name + ".");
-    alert(name);
-    });
+  $("#bar_result").append("<h3>" + "Great! We're ready to take your order at " + name + "." + "</h3>");
 
   $("#add_drink").click(function() {
     $("input#name").val("");
@@ -64,19 +61,18 @@ $(document).ready(function() {
 
     var newOrder = new Drink(nameInput, drinkInput, timeInput);
 
-    var array = [];
-    array.push(newOrder);
-    array.forEach(function(order) {
-      if (drinkInput <= 1 ) {
+    var finalOrder = [];
+    finalOrder.push(newOrder);
+    finalOrder.forEach(function() {
+      if (ageInput <= 1 ) {
         alert("Not old enough, bummer!");
       } else {
-        $("#result").show();
-        $(".name_result").append(newOrder.name);
-        $(".drink_result").append(newOrder.drink);
-        $(".time_result").append(newOrder.time);
+        $("#result").show().append("<li>Name: " + newOrder.name + "</li>").append("<li>Drink: " + newOrder.drink + "</li>").append("<li>Ready in: " + newOrder.time + "</li>");
+
         // $("#result").append(newOrder.fullOrder());
       }
-    });
+
+      });
 
   });
 });
