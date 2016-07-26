@@ -24,3 +24,7 @@ img {
   margin-top: 0em;
   margin-bottom: 0em;
 }
+
+#carousel-btn {
+  margin: auto;
+}
