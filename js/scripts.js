@@ -1,4 +1,4 @@
-//Backend logic
+//Form back-end logic
 
 function Drink(name, drink, time) {
   this.name = name,
@@ -6,9 +6,9 @@ function Drink(name, drink, time) {
   this.time = time
 }
 
-Drink.prototype.fullOrder = function() {
-  return this.name + this.drink + this.time;
-}
+// Drink.prototype.fullOrder = function() {
+//   return this.name + this.drink + this.time;
+// }
 
 //location back-end
 var id;
@@ -43,17 +43,17 @@ $(document).ready(function() {
     naming();
   });
 
-  $("#bar_result").append("<h3>" + "Great! We're ready to take your order at " + name + "." + "</h3>");
-
-  $("#add_drink").click(function() {
-    $("input#name").val("");
-    $("select#eta").val("");
-    $("input#age").prop("checked", false);
-    $("input#drink").val("");
-  });
+  $("#bar_result").append("<h1>" + "Ready to take your order at " + name + "!" + "</h1>");
 
   $("form#order_form").submit(function(event) {
     event.preventDefault();
+    // if ($("input#drink" ).val().length >= 1 ) {
+    // alert( "Validated..." );
+    // return;
+    // } else {
+    // alert("Fill out yo drink");
+    // return false;
+    // }
     var nameInput = $("input#name").val();
     var ageInput = parseInt($("input:radio[name=age]:checked").val());
     var timeInput = $("select#eta").val();
@@ -67,12 +67,20 @@ $(document).ready(function() {
       if (ageInput <= 1 ) {
         alert("Not old enough, bummer!");
       } else {
-        $("#result").show().append("<li>Name: " + newOrder.name + "</li>").append("<li>Drink: " + newOrder.drink + "</li>").append("<li>Ready in: " + newOrder.time + "</li>");
-
-        // $("#result").append(newOrder.fullOrder());
+        $("#confirm_area").show();
+        $("#result").show().prepend("<p>Ready in: " + newOrder.time + "</p>").prepend("<p>Drink: " + newOrder.drink + "</p>").prepend("<p class='first'>Name: " + newOrder.name + "</p>");
+        // clear fields
+        $("input#name").val("");
+        $("input#age").prop("checked", false);
+        $("input#drink").val("");
       }
-
-      });
-
+    });
+    event.preventDefault();
   });
+
+  $("#confirm_submit").click(function() {
+    $("#thanks").append("<h1>Thanks for your order at " + name + ". " + "See you soon!</h1>").hide().fadeIn(2000);
+    $("#pre_order").hide();
+  });
+
 });
