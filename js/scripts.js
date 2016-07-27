@@ -47,17 +47,17 @@ $(document).ready(function() {
 
   $("form#order_form").submit(function(event) {
     event.preventDefault();
-    // if ($("input#drink" ).val().length >= 1 ) {
-    // alert( "Validated..." );
-    // return;
-    // } else {
-    // alert("Fill out yo drink");
-    // return false;
-    // }
     var nameInput = $("input#name").val();
     var ageInput = parseInt($("input:radio[name=age]:checked").val());
     var timeInput = $("select#eta").val();
     var drinkInput = $("input#drink").val();
+
+    if ($("input#name").val().length >= 1 && $("input:radio[name=age]:checked").val() && $("input#drink").val().length >= 1 ) {
+    true;
+    } else {
+    alert("Fill out dem fields!");
+    return false;
+    }
 
     var newOrder = new Drink(nameInput, drinkInput, timeInput);
 
