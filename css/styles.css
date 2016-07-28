@@ -1,3 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
 img {
   height: 240px;
   width: 90%;
@@ -30,11 +34,34 @@ img {
   margin-bottom: 0em;
 }
 
-#result {
-  display: none;
-  margin-top: 30px;
+#bar_result {
+  padding-top: 15px;
 }
 
-#result p {
+#pre_order {
+  width: 90%;
+}
+
+#confirm_area {
   font-family: monospace;
+  padding-left: 15%;
+}
+
+#result {
+  display: none;
+}
+
+#order_form {
+  margin-top: 30px;
+  padding: 25px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.first {
+  padding-top: 15px;
+}
+
+#thanks {
+  margin-top: 60px;
 }

@@ -1,4 +1,4 @@
-//Backend logic
+//Form back-end logic
 
 function Drink(name, drink, time) {
   this.name = name,
@@ -6,9 +6,9 @@ function Drink(name, drink, time) {
   this.time = time
 }
 
-Drink.prototype.fullOrder = function() {
-  return this.name + this.drink + this.time;
-}
+// Drink.prototype.fullOrder = function() {
+//   return this.name + this.drink + this.time;
+// }
 
 //location back-end
 var id;
@@ -37,23 +37,13 @@ var naming = function() {
 }
 
 $(document).ready(function() {
-  $('a').click(function(event) {
-    event.preventDefault();
+  $('a').click(function() {
     window.location.href = "order_form.html";
     id = $(this).attr('id');
     naming();
   });
 
-  $("#bar_result").text("Great! We're ready to take your order at " + name + ".");
-    alert(name);
-    });
-
-  $("#add_drink").click(function() {
-    $("input#name").val("");
-    $("select#eta").val("");
-    $("input#age").prop("checked", false);
-    $("input#drink").val("");
-  });
+  $("#bar_result").append("<h1>" + "Ready to take your order at " + name + "!" + "</h1>");
 
   $("form#order_form").submit(function(event) {
     event.preventDefault();
@@ -62,21 +52,35 @@ $(document).ready(function() {
     var timeInput = $("select#eta").val();
     var drinkInput = $("input#drink").val();
 
+    if ($("input#name").val().length >= 1 && $("input:radio[name=age]:checked").val() && $("input#drink").val().length >= 1 ) {
+    true;
+    } else {
+    alert("Fill out dem fields!");
+    return false;
+    }
+
     var newOrder = new Drink(nameInput, drinkInput, timeInput);
 
-    var array = [];
-    array.push(newOrder);
-    array.forEach(function(order) {
-      if (drinkInput <= 1 ) {
+    var finalOrder = [];
+    finalOrder.push(newOrder);
+    finalOrder.forEach(function() {
+      if (ageInput <= 1 ) {
         alert("Not old enough, bummer!");
       } else {
-        $("#result").show();
-        $(".name_result").append(newOrder.name);
-        $(".drink_result").append(newOrder.drink);
-        $(".time_result").append(newOrder.time);
-        // $("#result").append(newOrder.fullOrder());
+        $("#confirm_area").show();
+        $("#result").show().prepend("<p>Ready in: " + newOrder.time + "</p>").prepend("<p>Drink: " + newOrder.drink + "</p>").prepend("<p class='first'>Name: " + newOrder.name + "</p>");
+        // clear fields
+        $("input#name").val("");
+        $("input#age").prop("checked", false);
+        $("input#drink").val("");
       }
     });
-
+    event.preventDefault();
   });
+
+  $("#confirm_submit").click(function() {
+    $("#thanks").append("<h1>Thanks for your order at " + name + ". " + "See you soon!</h1>").hide().fadeIn(2000);
+    $("#pre_order").hide();
+  });
+
 });
