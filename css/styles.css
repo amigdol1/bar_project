@@ -65,3 +65,11 @@ img {
 #thanks {
   margin-top: 60px;
 }
+
+#carousel-btn {
+    padding: 15px;
+    margin: -20px -50px;
+    position:relative;
+    top:50%;
+    left:50%;
+}

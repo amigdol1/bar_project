@@ -37,7 +37,7 @@ var naming = function() {
 }
 
 $(document).ready(function() {
-  $('a').click(function() {
+  $('a.bar').click(function() {
     window.location.href = "order_form.html";
     id = $(this).attr('id');
     naming();
